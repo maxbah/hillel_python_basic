@@ -79,4 +79,15 @@ def calc_sum_numbers(l):
 l1 = [1, 2, 3]
 print(calc_sum_numbers(l))
 
+maybee its normal too)
+def calc_sum_numbers(l):
+    if not l:
+        return 0
+    else:
+        rest_sum = calc_sum_numbers(l[1:])
+        return l[0] + rest_sum
+
+l1 = [1, 2, 3, 4, 5, 6, 7, 8]
+print(calc_sum_numbers(l1))
+
 
