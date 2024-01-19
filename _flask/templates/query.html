@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+</head>
+<body>
+    <h1>Hello, <span style="color: red">{{username}}</span> !!!</h1>
+
+    <ul>
+    {% for k, v in data.items() %}
+        <li><span style="font-size: xxx-large">{{k}} is {{v}} </span></li>
+    {% endfor %}
+
+    </ul>
+
+</body>
+</html>
