@@ -76,6 +76,7 @@ else:
         with open('google.png', 'wb') as f:
             f.write(data)
     else:
+
         print('Unecspected result')
         with open('google.html', 'wb') as f:
             f.write(data)
