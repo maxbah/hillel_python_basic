@@ -1,7 +1,7 @@
-# class Furniture:
-#     """ Class Furniture """
-#     high = 1
-#     vidth = 2
+class Furniture:
+    """ Class Furniture """
+    high = 1
+    vidth = 2
 #
 #     def __init__(self, high1, vidth1, name):
 #         self.high1 = high1
@@ -67,66 +67,66 @@ p2=Point(5,5)
 # p3 = Point('sadlkfj', [])
 # print(p3)
 
-
-class Line:
-    start = None
-    end = None
-
-    # def __new__(cls, *args, **kwargs):
-    #     isinstance=object.__new__(cls)
-    #     return isinstance
-
-    def __init__(self, point1, point2): #agregation
-        self.start = point1
-        self.end = point2
-
-    def length(self):
-        diffx = self.start.x - self.end.x
-        diffy = self.start.y - self.end.y
-        res = (diffx ** 2 + diffy**2) ** 0.5
-        return res
-
-    def __gt__(self, other):
-        print('In greater')
-        return self.length() > other.length()
-
-    def __lt__(self, other):
-        print('In lower')
-        return self.length() < other.length()
-
-    def __ge__(self, other):
-        print('In greater equal')
-        return self.length() >= other.length()
-
-    def __le__(self, other):
-        print('In less equal')
-        return self.length() <= other.length()
-
-    def __eq__(self, other):
-        print('In equal')
-        return self.length() == other.length()
-
-    def __ne__(self, other):
-        print('In not equal')
-        return self.length() != other.length()
-
-    # def __add__(self, other):
-    #     line = Line(self.other)
-    #     return line
-
-    # def __init__(self, x, y, x1, y1): #composition
-    #     self.start = Point(x, y)
-    #     self.end = Point(x1, y1)
-
-    def __str__(self):
-        return f'Line start {self.start} end {self.end}'
-    
-
-p3 = Point(0,0)
-p4 = Point(0,6)
-
-l = Line(p1, p2)
-l2 = Line(p3, p4)
+#
+# class Line:
+#     start = None
+#     end = None
+#
+#     # def __new__(cls, *args, **kwargs):
+#     #     isinstance=object.__new__(cls)
+#     #     return isinstance
+#
+#     def __init__(self, point1, point2): #agregation
+#         self.start = point1
+#         self.end = point2
+#
+#     def length(self):
+#         diffx = self.start.x - self.end.x
+#         diffy = self.start.y - self.end.y
+#         res = (diffx ** 2 + diffy**2) ** 0.5
+#         return res
+#
+#     def __gt__(self, other):
+#         print('In greater')
+#         return self.length() > other.length()
+#
+#     def __lt__(self, other):
+#         print('In lower')
+#         return self.length() < other.length()
+#
+#     def __ge__(self, other):
+#         print('In greater equal')
+#         return self.length() >= other.length()
+#
+#     def __le__(self, other):
+#         print('In less equal')
+#         return self.length() <= other.length()
+#
+#     def __eq__(self, other):
+#         print('In equal')
+#         return self.length() == other.length()
+#
+#     def __ne__(self, other):
+#         print('In not equal')
+#         return self.length() != other.length()
+#
+#     # def __add__(self, other):
+#     #     line = Line(self.other)
+#     #     return line
+#
+#     # def __init__(self, x, y, x1, y1): #composition
+#     #     self.start = Point(x, y)
+#     #     self.end = Point(x1, y1)
+#
+#     def __str__(self):
+#         return f'Line start {self.start} end {self.end}'
+#
+#
+# p3 = Point(0,0)
+# p4 = Point(0,6)
+#
+# l = Line(p1, p2)
+# l2 = Line(p3, p4)
 
 
 # print(l.length() > l2.length())
@@ -136,12 +136,34 @@ l2 = Line(p3, p4)
 # print(l2.length())
 # l1 = Line(2, 2, 8, 8)
 # print(l1)
-
-line = p3 + p4
-print(line)
-
-
+#
+# line = p3 + p4
+# print(line)
 
 
 
-""""""
+class Line:
+    start = None
+    _start = 2  # protected
+    __start = 10  # private
+    end = None
+
+    def __init__(self, point1, point2): #agregation
+        self.start = point1
+        self.end = point2
+
+    @property
+    def length(self):
+        diffx = self.start.x - self.end.x
+        diffy = self.start.y - self.end.y
+        res = (diffx ** 2 + diffy**2) ** 0.5
+        return res
+
+l2 = Line(p1, p2)
+# print(f' Class method {l2.length()}')
+
+print(f'Atribut {l2.length}')
+print(f'Protected {l2._start}')
+print(f'Private {l2._Line__start}')
+
+
